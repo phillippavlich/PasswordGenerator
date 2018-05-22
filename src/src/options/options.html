@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Options</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+<body>
+    <div class="form-style-5">
+        <form>
+            <h3> Password options for: <span id="domain"></span></h3>
+            Length: <input value="12" type="number" id="passLength">
+            <br> Minimum A-Z: <input value="0" type="number" id="upperCase" name="upperCase">
+            <br> Minimum a-z: <input value="0" type="number" id="lowerCase" name="lowerCase">
+            <br> Minimum 0-9: <input value="0" type="number" id="numbers" name="numbers">
+            <br> Minimum !@#$%^: <input value="0" type="number" id="symbols" name="symbols">
+            <div id="status">Example Password:</div>
+            <input type="text" id="demo" style="width: 400px;">
+            <h3>Salt Options</h3>
+            Upload Salt: <input type="file" id="saltUpload">
+            <br> Download Salt: <button id="saltDownload">Download</button>
+        </form>
+
+    </div>
+    <a style = "text-decoration:none;" href="../browser_action/browser_action.html"><button class="button button1">Main Menu</button></a>
+    <script src="./../module/dist/bundle.js"></script>
+    <script src="js/options.js"></script>
+</body>
+
+</html>

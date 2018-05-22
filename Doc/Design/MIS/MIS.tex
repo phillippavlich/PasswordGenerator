@@ -1,0 +1,313 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{pgfgantt}
+\usepackage{array}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcommand{\N}{\mathbb{N}}
+
+
+\title{3XA3 Module Interface Specification}
+\author{Group 20 (2020Vision)\\
+Mullen, Thomas - mullentc - 001406837\\
+Pavlich, Phillip - pavlicpm - 001414960\\
+Bauer, Ivan - bauerim - 001418765\\
+L02}
+\date{}
+
+\begin{document}
+\begin{table}[hp]
+\caption{Revision History} \label{TblRevisionHistory}
+\begin{tabularx}{\textwidth}{XXl}
+\toprule
+\textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
+\midrule
+November 10, 2017 & Thomas Mullen & Rev.0 of Document\\
+November 10, 2017 & Phillip Pavlich & Module M1 Section\\
+... & ... & ...\\
+\bottomrule
+\end{tabularx}
+\end{table}
+\newpage
+
+\maketitle
+\newpage
+
+\section{Module M1A (BrowserAction/UserInterface)}
+This section consists of the elements that are required for the user interface. It provides the user with a basic format to the display. Since it is a display, it does not have methods and state variables. It just displays the password from the Hasher module. 
+\section{Module M1B (BrowserAction/Customization)}
+This section consists of css code to customize the user interface and improve the view for the user. It styles all the elements so that they are readable and gives an appealing view.
+\section{Module M1C (BrowserAction/EventListeners)}
+This section consists of the basic event listeners for the user interface. It has no state variable, only events that can be triggered by actions from the user. It has the following methods:
+\newline
+\newline
+infoView: This method allows the user to click the info button to display more information about the application
+\newline
+tabChanged: This method detects if the user switches tabs to reflect the current domain
+\newline
+generate: This is a call to the hasher module to obtain the password and display it.
+\newline
+togglePass: This method toggles the view of the user key to make it either visible or hidden.
+
+\section{Module M2A (hasher/index)}
+
+\begin{table}[!htbp]
+\begin{tabular}{|p{0.5\linewidth} | p{0.5\linewidth}|}
+\hline
+Name & hasher/index \\
+\hline
+Imported Indentifiers & $String$ (String data type) \\
+& $Object$ (Object data type) \\
+& $generateHash$ (hasher/hash)\\
+& $applyConstraints$ (hasher/constraints) \\
+& $getSalt$ (hasher/salt) \\
+\hline
+Exported Access Routines & $init$, $generatePassword$ \\
+\hline
+State Variables & None \\
+\hline
+State Invariant & $opts \in Object$ \\
+\hline
+Assumptions & $init$ called first \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!htbp]
+\caption{Access Routine Semantics}
+\begin{tabular}{|p{0.33\linewidth} | p{0.33\linewidth}|p{0.33\linewidth}|}
+\hline
+Name & IO Relation & Domain \\
+\hline
+$init()$ & $opts = \{\}$ & None \\
+\hline
+(1) & $(2)$ & $master \in String \land domain \in String$ \\
+\hline
+$setOptions(x)$ & $opts = x$ & $x \in Object$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{equation}
+generatePassword(master, domain)
+\end{equation}
+
+\begin{equation}
+result = applyConstraints(generateHash(master+domain+getSalt()), opts)
+\end{equation}
+
+\newpage
+\section{Module M2B (hasher/hash)}
+
+\begin{table}[!htbp]
+\begin{tabular}{|p{0.5\linewidth} | p{0.5\linewidth}|}
+\hline
+Name & hasher/hash \\
+\hline
+Imported Indentifiers & $String$ (String data type) \\
+& $Buffer$ (Buffer data type) \\
+& $hash$ (function that is computationally infeasible to reverse) \\
+\hline
+Exported Access Routines & $generateHash$ \\
+\hline
+State Variables & None \\
+\hline
+State Invariant & $true$ \\
+\hline
+Assumptions & None \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!htbp]
+\caption{Access Routine Semantics}
+\begin{tabular}{|p{0.33\linewidth} | p{0.33\linewidth}|p{0.33\linewidth}|}
+\hline
+Name & IO Relation & Domain \\
+\hline
+$generateHash(x)$ & $result = hash(x) \land result \in String$ & $x \in String \lor x \in Buffer$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+\section{Module M2C (hasher/unicode)}
+
+\begin{table}[!htbp]
+\begin{tabular}{|p{0.5\linewidth} | p{0.5\linewidth}|}
+\hline
+Name & hasher/unicode \\
+\hline
+Imported Indentifiers & $String$ (String data type) \\
+& $CharacterType$ (Classes of Unicode character (special character, letter, number, alphanum, etc.)) \\
+\hline
+Exported Access Routines & $fromHexCode$ \\
+\hline
+State Variables & None \\
+\hline
+State Invariant & $true$ \\
+\hline
+Assumptions & None \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!htbp]
+\caption{Access Routine Semantics}
+\begin{tabular}{|p{0.33\linewidth} | p{0.33\linewidth}|p{0.33\linewidth}|}
+\hline
+Name & IO Relation & Domain \\
+\hline
+$fromHexCode(code, type)$ & $result \in type \land result \in String$ & $code \in String \land type \in CharacterType$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+\section{Module M2D (hasher/constraints)}
+
+\begin{table}[!htbp]
+\begin{tabular}{|p{0.5\linewidth} | p{0.5\linewidth}|}
+\hline
+Name & hasher/constraints \\
+\hline
+Imported Indentifiers & $String$ (String data type) \\
+& $Object$ (Object data type) \\
+& $CharacterType$ (Classes of Unicode character (special character, letter, number, alphanum, etc.)) \\
+\hline
+Exported Access Routines & $applyConstraints$ \\
+\hline
+State Variables & None \\
+\hline
+State Invariant & $true$ \\
+\hline
+Assumptions & None \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!htbp]
+\caption{Access Routine Semantics}
+\begin{tabular}{|p{0.33\linewidth} | p{0.33\linewidth}|p{0.33\linewidth}|}
+\hline
+Name & IO Relation & Domain \\
+\hline
+$applyConstraints(x, opts)$ & (3) & $x \in String \land opts \in Object$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{equation}
+result \in String \land ((	\exists_{n} type \in result)\forall type \in keys(opts) \land n = opts[type])
+\end{equation}
+
+\newpage
+\section{Module M2E (hasher/salt)}
+
+\begin{table}[!htbp]
+\begin{tabular}{|p{0.5\linewidth} | p{0.5\linewidth}|}
+\hline
+Name & hasher/salt \\
+\hline
+Imported Indentifiers & $String$ (String data type) \\
+& $Buffer$ (String data type) \\
+\hline
+Exported Access Routines & $setSalt$, $getSalt$ \\
+\hline
+State Variables & $salt$ \\
+\hline
+State Invariant & $salt \in Buffer \lor salt = null$ \\
+\hline
+Assumptions & None \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!htbp]
+\caption{Access Routine Semantics}
+\begin{tabular}{|p{0.33\linewidth} | p{0.33\linewidth}|p{0.33\linewidth}|}
+\hline
+Name & IO Relation & Domain \\
+\hline
+$setSalt(x)$ & $salt = x$ & $x \in Buffer$ \\
+\hline
+$getSalt()$ & $result = toString(salt)$ & $true$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+\section{Module M3A (options/constraints)}
+
+\begin{table}[!htbp]
+\begin{tabular}{|p{0.5\linewidth} | p{0.5\linewidth}|}
+\hline
+Name & options/constraints \\
+\hline
+Imported Indentifiers & $\N$ Natural numbers $(0, \infty]$ \\
+\hline
+Exported Access Routines & $setLength$, $getLength$ \\
+\hline
+State Variables & $length$ \\
+\hline
+State Invariant & $length \in \N$ \\
+\hline
+Assumptions & None \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!htbp]
+\caption{Access Routine Semantics}
+\begin{tabular}{|p{0.33\linewidth} | p{0.33\linewidth}|p{0.33\linewidth}|}
+\hline
+Name & IO Relation & Domain \\
+\hline
+$setLength(x)$ & $length = x$ & $x \in \N$ \\
+\hline
+$getLength()$ & $result = length$ & $true$ \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\newpage
+\section{Module M3B (options/display)}
+
+\begin{table}[!htbp]
+\begin{tabular}{|p{0.5\linewidth} | p{0.5\linewidth}|}
+\hline
+Name & options/display \\
+\hline
+Imported Indentifiers & $Object$ (Object data type) \\
+\hline
+Exported Access Routines & $setOptions$, $getOptions$ \\
+\hline
+State Variables & $opts$ \\
+\hline
+State Invariant & $opts \in Object$ \\
+\hline
+Assumptions & None \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!htbp]
+\caption{Access Routine Semantics}
+\begin{tabular}{|p{0.33\linewidth} | p{0.33\linewidth}|p{0.33\linewidth}|}
+\hline
+Name & IO Relation & Domain \\
+\hline
+$setOptions(x)$ & $opts= x$ & $x \in Object$ \\
+\hline
+$getOptions()$ & $result = opts$ & $true$ \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\end{document}

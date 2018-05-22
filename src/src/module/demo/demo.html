@@ -1,0 +1,51 @@
+<html lang="en">
+  <head>
+    <style>
+      body {
+        font-family: 'Arial';
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Scrypt + AES (Keystores - Local Knowledge)</h3>
+    <p>Guesses: <span id="aes-guesses"></span></p>
+    <p>Found: <span id="aes-result"></span></p>
+    
+    <h3>SHA256 (HashPass - Remote Knowledge)</h3>
+    <p>Guesses: <span id="hash-guesses"></span></p>
+    <p>Found: <span id="hash-result"></span></p>
+    
+    <h3>SHA256 (PretzelPass - Remote Knowledge)</h3>
+    <p>Guesses: <span id="pretzel-guesses"></span></p>
+    <p>Found: <span id="pretzel-result"></span></p>
+    
+    <h3>SHA256 (PretzelPass - Total Knowledge)</h3>
+    <p>Guesses: <span id="pretzel2-guesses"></span></p>
+    <p>Found: <span id="pretzel2-result"></span></p>
+    <br>
+    <button id="start">Start</button>
+  </body>
+  <script>
+    document.getElementById('start').addEventListener('click', () => {
+      var workers = [
+        new Worker("aes-worker.js"),
+        new Worker("hash-worker.js"),
+        new Worker("pretzel-worker.js"),
+        new Worker("pretzel-worker2.js")
+      ]
+
+      var t1 = performance.now()
+
+      workers.forEach(worker => {
+        worker.onmessage = function (e) {
+          document.getElementById(e.data.method+'-guesses').innerHTML = e.data.guesses
+          if (e.data.result) {
+            var totalTime = performance.now() - t1
+            document.getElementById(e.data.method+'-result').innerHTML = e.data.result + ' ('+totalTime+'ms)'
+          }
+        }
+      })
+    })
+  </script>
+</html>

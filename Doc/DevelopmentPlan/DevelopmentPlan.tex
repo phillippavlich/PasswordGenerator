@@ -1,0 +1,85 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{pgfgantt}
+
+\title{3XA3 Development Plan}
+\author{Group 20 (2020Vision)\\
+Mullen, Thomas - mullentc - 001406837\\
+Pavlich, Phillip - pavlicpm - 001414960\\
+Bauer, Ivan - bauerim - 001418765\\
+L02}
+\date{}
+
+\begin{document}
+\begin{table}[hp]
+\caption{Revision History} \label{TblRevisionHistory}
+\begin{tabularx}{\textwidth}{XXl}
+\toprule
+\textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
+\midrule
+September 28, 2017 & Thomas Mullen & Rev.0 of Document\\
+September 29, 2017 & Phillip Pavlich & Rev.0 of Document\\
+... & ... & ...\\
+\bottomrule
+\end{tabularx}
+\end{table}
+\newpage
+
+
+\maketitle
+\newpage
+
+\begin{flushleft}
+\setlength{\parindent}{3ex}
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+This document contains details pertaining to the organization of the development team and the technical process that will be followed to develop the software. It will outline each member's role as part of this group and outline plans to help the group attain our end goal of developing and restructuring an existing software project.
+
+\section{Team Meeting Plan}
+
+All team members will meet every Thursday at 3pm in the Health Sciences Library. This meeting will be used to go over any questions, our progress on the project, and our goal for the upcoming week. If circumstances require this to change, the meeting organizer will communicate the change.
+
+\section{Team Communication Plan}
+
+Team members will use the private "3XA3-Group20" Gitter community for general discussion. Code reviews and other discussion specific to source code will take place within the GitLab platform. Discussions within team meetings should involve the entire team and should not involve topics concerning only a few members. 
+
+\section{Team Member Roles}
+This section describes and assigns roles to each team member. If there are any changes to any of these roles, it will be discussed with the entire team. Upon approval, it will be documented and implemented. \newline
+
+Phil, as the \textbf{team leader}, will be responsible for any executive decisions not covered by other roles and will be required to resolve any conflicts arising between group members. \newline
+
+Ivan, as the \textbf{meeting organizer}, will be responsible for communicating any changes to the time or location of team meetings. This role is responsible for documenting meeting attendance and other related information. It is important that Ivan outlines the goals for each meeting to ensure that our group manages time effectively and keep to the time line given for completion of this project. \newline
+
+Thomas, as the \textbf{software architect}, will be responsible for making any final technical decisions. It is important for each member to voice their ideas and opinions but this role must weigh the pros and cons of each alternative to make a final design decision. \newline
+
+All three members, as \textbf{developers}, will be responsible for contributing to the source code. Different modules will be assigned to each individual in order to implement. Questions regarding requirements will be addressed by the lead software developer.
+\newline
+
+All three members, as \textbf{business analysts}, will be responsible for performing unit tests to ensure the accuracy and correctness of the source code. It is the responsibility of the business analysts to verify that all modules satisfy both functional and non-functional requirements.
+
+\section{Git Workflow Plan}
+The version control software used will be Git and Gitlab. Contributions will be made within new "feature branches" and merged into the "dev branch" when completed and thoroughly tested. Merges into the "dev branch" must be reviewed by at least one other member. It must also pass some continuous integration checks. When code within the "dev branch" is considered to be complete, it will then be merged into the "master branch" as a release. Commit messages should be meaningful and precisely outline any significant changes.
+
+\section{Proof of Concept Demonstration Plan}
+The demonstration will involve generating multiple passwords for different services and then regenerating them without storage. The demonstration will also show how existing attacks will fail on our software.
+
+\section{Technology}
+The software will be in the form of an "extension" for the Google Chrome browser. The language used will be Javascript. All three members have some experience writing code in this language. HTML and CSS will be used to create the user interface. No additional software should be required for the software to operate.
+
+\section{Coding Style}
+The source code and unit tests will follow Standard Javascript Style. An example of a standard Javascript style is using "camelCase" for variable and function names. This means the name begins with a lowercase letter and future words start with an uppercase letter. Code style will be enforced by continuous integration checks. Release versions will follow Semantic Versioning 2.0.0.
+
+\section{Project Schedule}
+
+Refer to file \textbf{3XA3\_GanttProjectDevPlan.gan}.
+
+\section{Project Review}
+
+\end{flushleft}
+
+\end{document}

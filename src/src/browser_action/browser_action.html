@@ -1,0 +1,87 @@
+<!doctype html>
+<html id="page">
+	<head>
+		<!-- Links to Bootstrap and customized css page-->
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/browser_action.css">
+	</head>
+	<body>
+		<!--Header of the application-->
+		<div class="header">
+			<img id="pretzel" src="./../../../icons/icon128.png"/>
+			<h2 class="title">Welcome to <strong>Pretzel Pass</strong>!</h2>
+			<!--Link to options/preferences page -->
+			<a href="../options/options.html">
+				<div id="settingsbtn" >
+					<span class="centerOptions">Options</span>
+				</div>
+			</a>
+		</div>
+		
+		<!--How to instructions for the application.
+		These are hidden unless the user clicks the info button on the bottom right of the page -->
+		<div id="how">
+			<p class="larger">Here is what our app does and how it works:</p>
+			<ul>
+				<li>You <em>(the user)</em>, chooses a key <strong>(you will need to remember this)</strong></li>
+				<li>The system uses the key provided the user, the domain of the webpage, and a salt(random string) stored locally</li>
+				<li>The program concatenates the inputs from the step above and hashes the result several times</li>
+				<li>The options page (settings button) allows you to customize the srequirements for your password</li>
+				<li>The system returns a secure password that matches the preferences</li>
+				<li>This password can be used for the current website.</li>
+				<li>Memorization is not important as the password will always be the same when given the same inputs.</li>
+
+			</ul>
+		</div>
+		
+		<!--This section allows the user to give the application input and receive a password
+		This is the body of the application -->
+		<div id="toggleField"> 
+			<form>
+
+				<div class="row">
+					<div class="col-xs-3">
+						Domain:
+					</div>
+					<div class="col-xs-9">
+						<input class="inputbox" id="domain" type="text" value="Domain" >
+					</div>
+					<div class="col-xs-3">
+						UserKey:
+					</div>
+					<div class="col-xs-9">
+						<input class="inputbox" id="master" type="password" name="userKey">
+					</div>
+					<div class="col-xs-3">
+						Password:
+					</div>
+					<div class="col-xs-9">
+						<input class="inputbox" id="output" type="text" value="Please enter your User Key Above" readonly>
+					</div>
+				</div>
+				
+				<!--Allows the user to toggle the view of the user key -->
+				<p>Show UserKey?</p>
+
+		  		<!-- Rounded switch -->
+				<label class="switch" >
+		  			<input id="togglePasswordField" type="checkbox">
+		  			<span class="slider round" ></span>
+				</label>
+			</form>
+		</div>
+		
+		<!--This is the info button that is provided to help the user -->
+		<div id="infobtn" >
+			i
+		</div>
+		<p id="credit"><strong>Brought to you by:</strong> Phillip Pavlich, Ivan Bauer and Thomas Mullen <p>
+		
+		<!--Links to JavaScript Scripts that execute behind the scenes actions -->
+		<script src="js/browser_action.js"></script>
+		<script src="./../module/dist/bundle.js"></script>
+		<!--uncomment below if testing to UI is being done -->
+		<!--<script src="js/browser_action_Testing.js"></script> -->
+
+	</body>
+</html>

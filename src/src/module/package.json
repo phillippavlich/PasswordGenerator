@@ -1,0 +1,20 @@
+{
+  "name": "pretzel-pass",
+  "version": "1.0.0",
+  "description": "Generate secure passwords with SHA256.",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard --fix src/** && tape test/*.js",
+    "build": "browserify index.js -s PretzelPass -o dist/bundle.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^10.0.3",
+    "tape": "^4.8.0"
+  },
+  "dependencies": {
+    "safe-buffer": "^5.1.1",
+    "sha.js": "^2.4.9"
+  }
+}

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="3XA3 Development Plan Gantt" company="McMaster 3XA3 Group 20 Lab 2" webLink="" view-date="2017-09-10" view-index="0" gantt-divider-location="527" resource-divider-location="373" version="2.8.5" locale="en_CA">
+    <description><![CDATA[This is the gantt chart outlining the resources required to achieve all goals and milestones.]]></description>
+    <view zooming-state="default:6" id="gantt-chart">
+        <field id="tpd3" name="Name" width="229" order="0"/>
+        <field id="tpd4" name="Begin date" width="92" order="1"/>
+        <field id="tpd5" name="End date" width="110" order="2"/>
+        <field id="tpd6" name="Duration" width="77" order="3"/>
+        <option id="taskLabelLeft" value="name"/>
+        <option id="taskLabelRight" value="length"/>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Name" width="172" order="0"/>
+        <field id="1" name="Default role" width="197" order="1"/>
+    </view>
+    <!-- -->
+    <calendars base-id="none">
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" name="Team Formation" color="#8cb6ce" meeting="false" start="2017-09-11" duration="5" complete="100" expand="true"/>
+        <task id="45" name="Documenting Project Approval" color="#8cb6ce" meeting="false" start="2017-09-15" duration="2" complete="100" expand="true">
+            <depend id="2" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="2" name="Project Approval" color="#8cb6ce" meeting="true" start="2017-09-19" duration="0" complete="100" expand="true"/>
+        <task id="48" name="Writing Problem Statement Doc" color="#8cb6ce" meeting="false" start="2017-09-19" duration="4" complete="100" expand="true">
+            <depend id="3" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="3" name="Problem Statement" color="#8cb6ce" meeting="true" start="2017-09-25" duration="0" complete="100" expand="true"/>
+        <task id="50" name="Creating Team Development Plan" color="#8cb6ce" meeting="false" start="2017-09-25" duration="5" complete="100" expand="true">
+            <depend id="7" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="7" name="Development Plan" color="#8cb6ce" meeting="true" start="2017-10-02" duration="0" complete="100" expand="true"/>
+        <task id="21" name="Defining Requirements" color="#8cb6ce" meeting="false" start="2017-10-02" duration="5" complete="100" expand="true">
+            <depend id="9" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="9" name="Requirements Document Revision 0" color="#8cb6ce" meeting="true" start="2017-10-09" duration="0" complete="100" expand="true"/>
+        <task id="38" name="Preparing Proof of Concept" color="#8cb6ce" meeting="false" start="2017-10-09" duration="6" complete="100" expand="true">
+            <depend id="11" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="11" name="Proof of Concept Demonstration" color="#8cb6ce" meeting="false" start="2017-10-17" duration="5" complete="100" expand="true"/>
+        <task id="34" name="Developing test cases" color="#8cb6ce" meeting="false" start="2017-10-23" duration="5" complete="100" expand="true">
+            <depend id="13" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="13" name="Test Plan Revision 0" color="#8cb6ce" meeting="true" start="2017-10-30" duration="0" complete="100" expand="true"/>
+        <task id="43" name="Creating initial design document" color="#8cb6ce" meeting="false" start="2017-11-01" duration="8" complete="100" expand="true">
+            <depend id="15" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="15" name="Design &amp; Document Revision 0" color="#8cb6ce" meeting="true" start="2017-11-13" duration="0" complete="100" expand="true"/>
+        <task id="17" name="Revision 0 Demonstration" color="#8cb6ce" meeting="false" start="2017-11-13" duration="5" complete="100" expand="true"/>
+        <task id="35" name="Preparing for final Demonstration" color="#8cb6ce" meeting="false" start="2017-11-20" duration="5" complete="100" expand="true">
+            <depend id="18" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="18" name="Final Demonstration (Revision 1)" color="#8cb6ce" meeting="false" start="2017-11-27" duration="5" complete="100" expand="true"/>
+        <task id="37" name="Working on final documentation" color="#8cb6ce" meeting="false" start="2017-11-27" duration="7" complete="100" expand="true">
+            <depend id="19" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="19" name="Final Documentation (Revision 1)" color="#8cb6ce" meeting="true" start="2017-12-06" duration="0" complete="100" expand="true"/>
+        <task id="153" name="Planning System and Software Requirements" color="#8cb6ce" meeting="false" start="2017-09-25" duration="10" complete="100" expand="true">
+            <depend id="155" type="1" difference="0" hardness="Rubber"/>
+            <depend id="156" type="1" difference="0" hardness="Rubber"/>
+            <depend id="157" type="1" difference="0" hardness="Rubber"/>
+            <depend id="161" type="1" difference="0" hardness="Rubber"/>
+            <depend id="162" type="1" difference="0" hardness="Rubber"/>
+            <depend id="163" type="1" difference="0" hardness="Rubber"/>
+            <depend id="164" type="1" difference="0" hardness="Rubber"/>
+            <depend id="165" type="1" difference="0" hardness="Rubber"/>
+            <depend id="166" type="1" difference="0" hardness="Rubber"/>
+        </task>
+        <task id="155" name="Planning Fuctional Requirements" color="#8cb6ce" meeting="false" start="2017-09-25" duration="3" complete="100" expand="true"/>
+        <task id="156" name="Planning Usability Requirements" color="#8cb6ce" meeting="false" start="2017-09-28" duration="1" complete="100" expand="true"/>
+        <task id="157" name="Planning Safety Requirements" color="#8cb6ce" meeting="false" start="2017-09-29" duration="1" complete="100" expand="true"/>
+        <task id="166" name="Planning Performance Requirements" color="#8cb6ce" meeting="false" start="2017-10-02" duration="1" complete="100" expand="true"/>
+        <task id="165" name="Planning Installability Requirements" color="#8cb6ce" meeting="false" start="2017-10-03" duration="1" complete="100" expand="true"/>
+        <task id="164" name="Planning Operational Requirements" color="#8cb6ce" meeting="false" start="2017-10-03" duration="1" complete="100" expand="true"/>
+        <task id="163" name="Planning Security Requirements" color="#8cb6ce" meeting="false" start="2017-10-04" duration="2" complete="100" expand="true"/>
+        <task id="162" name="Planning Cultural and Political Requirements" color="#8cb6ce" meeting="false" start="2017-10-06" duration="1" complete="100" expand="true"/>
+        <task id="161" name="Planning Legal Requirements" color="#8cb6ce" meeting="false" start="2017-10-06" duration="1" complete="100" expand="true"/>
+        <task id="51" name="Outlining Features for Redevelopment" color="#8cb6ce" meeting="false" start="2017-09-29" duration="3" complete="100" expand="true">
+            <depend id="39" type="1" difference="0" hardness="Rubber"/>
+        </task>
+        <task id="52" name="Planning Modularity of Code Design" color="#8cb6ce" meeting="false" start="2017-10-04" duration="3" complete="100" expand="true">
+            <depend id="39" type="3" difference="0" hardness="Rubber"/>
+        </task>
+        <task id="53" name="Planning coupling and cohesion" color="#8cb6ce" meeting="false" start="2017-10-09" duration="3" complete="100" expand="true">
+            <depend id="39" type="3" difference="0" hardness="Rubber"/>
+        </task>
+        <task id="39" name="Designing System" color="#8cb6ce" meeting="false" start="2017-09-29" duration="9" complete="100" expand="true"/>
+        <task id="54" name="Restructuring Open Source Code" color="#8cb6ce" meeting="false" start="2017-10-02" duration="4" complete="100" expand="true">
+            <depend id="36" type="1" difference="0" hardness="Rubber"/>
+        </task>
+        <task id="57" name="Restructuring security/hashing" color="#8cb6ce" meeting="false" start="2017-10-05" duration="9" complete="100" expand="true">
+            <depend id="36" type="3" difference="0" hardness="Rubber"/>
+        </task>
+        <task id="58" name="Adding additional features" color="#8cb6ce" meeting="false" start="2017-10-16" duration="20" complete="100" expand="true">
+            <depend id="36" type="3" difference="0" hardness="Rubber"/>
+        </task>
+        <task id="36" name="Source Code development" color="#8cb6ce" meeting="false" start="2017-10-02" duration="30" complete="100" expand="true"/>
+        <task id="95" name="Testing hiding/view of user key" color="#8cb6ce" meeting="false" start="2017-10-30" duration="2" complete="100" expand="true"/>
+        <task id="89" name="Testing hashing password function" color="#8cb6ce" meeting="false" start="2017-11-01" duration="3" complete="100" expand="true"/>
+        <task id="90" name="Testing domain preferences hashing" color="#8cb6ce" meeting="false" start="2017-10-31" duration="3" complete="100" expand="true"/>
+        <task id="92" name="Testing User Interface Interactions" color="#8cb6ce" meeting="false" start="2017-11-03" duration="4" complete="100" expand="true"/>
+        <task id="93" name="Testing Event Listeners to trigger backend interactions" color="#8cb6ce" meeting="false" start="2017-11-09" duration="2" complete="100" expand="true"/>
+        <task id="91" name="Testing Saving preferences for a domain" color="#8cb6ce" meeting="false" start="2017-11-08" duration="3" complete="100" expand="true"/>
+        <task id="94" name="Testing random salt added for password security" color="#8cb6ce" meeting="false" start="2017-11-07" duration="4" complete="100" expand="true"/>
+        <task id="97" name="Testing Media queries for adjusted screen dimensions" color="#8cb6ce" meeting="false" start="2017-11-14" duration="3" complete="100" expand="true"/>
+        <task id="96" name="Testing Behavior of all 3 modules combined" color="#8cb6ce" meeting="false" start="2017-11-13" duration="5" complete="100" expand="true"/>
+        <task id="65" name="Black Box Testing" color="#8cb6ce" meeting="false" start="2017-10-30" duration="5" complete="100" expand="true">
+            <depend id="40" type="1" difference="0" hardness="Rubber"/>
+        </task>
+        <task id="64" name="Modular Testing (White Box)" color="#8cb6ce" meeting="false" start="2017-10-30" duration="10" complete="100" expand="true">
+            <depend id="40" type="1" difference="0" hardness="Rubber"/>
+        </task>
+        <task id="63" name="Unit Testing (White Box)" color="#8cb6ce" meeting="false" start="2017-10-30" duration="15" complete="100" expand="true">
+            <depend id="40" type="1" difference="0" hardness="Rubber"/>
+        </task>
+        <task id="40" name="Testing Source Code" color="#8cb6ce" meeting="false" start="2017-10-30" duration="15" complete="100" expand="true"/>
+        <task id="216" name="Requirements Verification" color="#8cb6ce" meeting="false" start="2017-11-06" duration="10" complete="100" expand="true"/>
+        <task id="131" name="Final Corrections for Options Page" color="#8cb6ce" meeting="false" start="2017-11-15" duration="6" complete="100" expand="true">
+            <depend id="98" type="2" difference="0" hardness="Rubber"/>
+        </task>
+        <task id="98" name="Completion Date for options module" color="#8cb6ce" meeting="true" start="2017-11-23" duration="0" complete="100" expand="true"/>
+        <task id="132" name="Final Corrections for backend module" color="#8cb6ce" meeting="false" start="2017-11-17" duration="6" complete="100" expand="true">
+            <depend id="99" type="2" difference="0" hardness="Rubber"/>
+        </task>
+        <task id="99" name="Completion Date for backend module" color="#8cb6ce" meeting="true" start="2017-11-27" duration="0" complete="100" expand="true"/>
+        <task id="133" name="Final Corrections to User Interface" color="#8cb6ce" meeting="false" start="2017-11-20" duration="6" complete="100" expand="true">
+            <depend id="100" type="2" difference="0" hardness="Rubber"/>
+        </task>
+        <task id="100" name="Completion Date for Browser Action Module (UI)" color="#8cb6ce" meeting="true" start="2017-11-28" duration="0" complete="100" expand="true"/>
+    </tasks>
+    <resources>
+        <resource id="0" name="Phillip Pavlich" function="1" contacts="pavlicpm@mcmaster.ca" phone=""/>
+        <resource id="1" name="Ivan Bauer" function="2" contacts="" phone=""/>
+        <resource id="2" name="Thomas Mullen" function="3" contacts="" phone=""/>
+        <resource id="3" name="Phillip Pavlich" function="4" contacts="" phone=""/>
+        <resource id="4" name="Ivan Bauer" function="4" contacts="" phone=""/>
+        <resource id="5" name="Thomas Mullen" function="4" contacts="" phone=""/>
+        <resource id="6" name="Phillip Pavlich" function="5" contacts="" phone=""/>
+        <resource id="7" name="Ivan Bauer" function="5" contacts="" phone=""/>
+        <resource id="8" name="Thomas Mullen" function="5" contacts="" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="0" resource-id="0" function="1" responsible="true" load="5.0"/>
+        <allocation task-id="50" resource-id="0" function="1" responsible="false" load="5.0"/>
+        <allocation task-id="38" resource-id="0" function="1" responsible="true" load="8.0"/>
+        <allocation task-id="17" resource-id="0" function="1" responsible="true" load="10.0"/>
+        <allocation task-id="35" resource-id="0" function="1" responsible="false" load="8.0"/>
+        <allocation task-id="39" resource-id="0" function="1" responsible="true" load="5.0"/>
+        <allocation task-id="153" resource-id="0" function="1" responsible="true" load="10.0"/>
+        <allocation task-id="216" resource-id="0" function="1" responsible="true" load="8.0"/>
+        <allocation task-id="0" resource-id="1" function="2" responsible="false" load="5.0"/>
+        <allocation task-id="21" resource-id="1" function="2" responsible="false" load="12.0"/>
+        <allocation task-id="43" resource-id="1" function="2" responsible="true" load="5.0"/>
+        <allocation task-id="17" resource-id="1" function="2" responsible="false" load="10.0"/>
+        <allocation task-id="153" resource-id="1" function="2" responsible="false" load="10.0"/>
+        <allocation task-id="0" resource-id="2" function="3" responsible="false" load="5.0"/>
+        <allocation task-id="48" resource-id="2" function="3" responsible="false" load="5.0"/>
+        <allocation task-id="21" resource-id="2" function="3" responsible="false" load="15.0"/>
+        <allocation task-id="17" resource-id="2" function="3" responsible="false" load="10.0"/>
+        <allocation task-id="35" resource-id="2" function="3" responsible="true" load="7.0"/>
+        <allocation task-id="39" resource-id="2" function="3" responsible="false" load="8.0"/>
+        <allocation task-id="51" resource-id="2" function="3" responsible="true" load="5.0"/>
+        <allocation task-id="153" resource-id="2" function="3" responsible="false" load="10.0"/>
+        <allocation task-id="34" resource-id="3" function="4" responsible="false" load="15.0"/>
+        <allocation task-id="39" resource-id="3" function="4" responsible="false" load="8.0"/>
+        <allocation task-id="36" resource-id="3" function="4" responsible="true" load="12.0"/>
+        <allocation task-id="52" resource-id="3" function="4" responsible="true" load="5.0"/>
+        <allocation task-id="133" resource-id="3" function="4" responsible="true" load="10.0"/>
+        <allocation task-id="48" resource-id="4" function="4" responsible="true" load="5.0"/>
+        <allocation task-id="38" resource-id="4" function="4" responsible="false" load="6.0"/>
+        <allocation task-id="39" resource-id="4" function="4" responsible="false" load="6.0"/>
+        <allocation task-id="36" resource-id="4" function="4" responsible="false" load="12.0"/>
+        <allocation task-id="53" resource-id="4" function="4" responsible="true" load="5.0"/>
+        <allocation task-id="131" resource-id="4" function="4" responsible="true" load="10.0"/>
+        <allocation task-id="50" resource-id="5" function="4" responsible="false" load="5.0"/>
+        <allocation task-id="38" resource-id="5" function="4" responsible="false" load="8.0"/>
+        <allocation task-id="11" resource-id="5" function="4" responsible="true" load="5.0"/>
+        <allocation task-id="39" resource-id="5" function="4" responsible="false" load="7.0"/>
+        <allocation task-id="36" resource-id="5" function="4" responsible="false" load="10.0"/>
+        <allocation task-id="54" resource-id="5" function="4" responsible="true" load="8.0"/>
+        <allocation task-id="132" resource-id="5" function="4" responsible="true" load="10.0"/>
+        <allocation task-id="48" resource-id="6" function="5" responsible="false" load="10.0"/>
+        <allocation task-id="21" resource-id="6" function="5" responsible="true" load="5.0"/>
+        <allocation task-id="43" resource-id="6" function="5" responsible="false" load="12.0"/>
+        <allocation task-id="11" resource-id="6" function="5" responsible="false" load="5.0"/>
+        <allocation task-id="18" resource-id="6" function="5" responsible="false" load="8.0"/>
+        <allocation task-id="37" resource-id="6" function="5" responsible="false" load="10.0"/>
+        <allocation task-id="40" resource-id="6" function="5" responsible="true" load="5.0"/>
+        <allocation task-id="63" resource-id="6" function="5" responsible="true" load="15.0"/>
+        <allocation task-id="95" resource-id="6" function="5" responsible="true" load="3.0"/>
+        <allocation task-id="92" resource-id="6" function="5" responsible="true" load="10.0"/>
+        <allocation task-id="93" resource-id="6" function="5" responsible="true" load="5.0"/>
+        <allocation task-id="97" resource-id="6" function="5" responsible="true" load="8.0"/>
+        <allocation task-id="155" resource-id="6" function="5" responsible="true" load="5.0"/>
+        <allocation task-id="157" resource-id="6" function="5" responsible="true" load="3.0"/>
+        <allocation task-id="164" resource-id="6" function="5" responsible="true" load="3.0"/>
+        <allocation task-id="163" resource-id="6" function="5" responsible="false" load="3.0"/>
+        <allocation task-id="50" resource-id="7" function="5" responsible="true" load="10.0"/>
+        <allocation task-id="34" resource-id="7" function="5" responsible="false" load="10.0"/>
+        <allocation task-id="11" resource-id="7" function="5" responsible="false" load="5.0"/>
+        <allocation task-id="35" resource-id="7" function="5" responsible="false" load="9.0"/>
+        <allocation task-id="18" resource-id="7" function="5" responsible="false" load="12.0"/>
+        <allocation task-id="37" resource-id="7" function="5" responsible="true" load="10.0"/>
+        <allocation task-id="40" resource-id="7" function="5" responsible="false" load="5.0"/>
+        <allocation task-id="65" resource-id="7" function="5" responsible="true" load="5.0"/>
+        <allocation task-id="90" resource-id="7" function="5" responsible="true" load="5.0"/>
+        <allocation task-id="91" resource-id="7" function="5" responsible="true" load="7.0"/>
+        <allocation task-id="156" resource-id="7" function="5" responsible="true" load="3.0"/>
+        <allocation task-id="165" resource-id="7" function="5" responsible="true" load="3.0"/>
+        <allocation task-id="162" resource-id="7" function="5" responsible="true" load="3.0"/>
+        <allocation task-id="161" resource-id="7" function="5" responsible="true" load="3.0"/>
+        <allocation task-id="34" resource-id="8" function="5" responsible="true" load="4.0"/>
+        <allocation task-id="18" resource-id="8" function="5" responsible="true" load="8.0"/>
+        <allocation task-id="37" resource-id="8" function="5" responsible="false" load="10.0"/>
+        <allocation task-id="40" resource-id="8" function="5" responsible="false" load="5.0"/>
+        <allocation task-id="64" resource-id="8" function="5" responsible="true" load="10.0"/>
+        <allocation task-id="89" resource-id="8" function="5" responsible="true" load="8.0"/>
+        <allocation task-id="94" resource-id="8" function="5" responsible="true" load="4.0"/>
+        <allocation task-id="96" resource-id="8" function="5" responsible="true" load="6.0"/>
+        <allocation task-id="155" resource-id="8" function="5" responsible="false" load="5.0"/>
+        <allocation task-id="166" resource-id="8" function="5" responsible="true" load="3.0"/>
+        <allocation task-id="163" resource-id="8" function="5" responsible="true" load="6.0"/>
+    </allocations>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles>
+        <role id="1" name="Team Leader"/>
+        <role id="2" name="Meeting Organizer"/>
+        <role id="3" name="Software Architect"/>
+        <role id="4" name="Developer"/>
+        <role id="5" name="Business Analyst"/>
+    </roles>
+</project>

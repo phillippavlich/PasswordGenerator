@@ -1,0 +1,224 @@
+html{
+  background: #e6e6e6;
+  border: 2px solid #000000;
+  width: 500px;
+  height: 280px;
+}
+body{
+	margin: 0px;
+	padding: 0px;
+	font-family: "Times New Roman";
+  /*font-size: 14px;*/
+  postion: relative;
+}
+
+.header .title {
+	color: #0040ff;
+	font-family: Helvetica, Ubuntu, Arial, sans-serif;
+  
+  display: inline;
+  position: relative;
+  top: 20px;
+  left: 60px;
+  padding: 0 auto;
+  margin: 5 auto;
+  text-align: center;
+
+}
+
+
+.header #pretzel{
+  display: inline;
+  float: left;
+  width: 50px;
+  height: 50px;
+  margin:5px 10px 10px 10px;
+
+
+}
+.header{
+  margin-bottom: 40px;
+
+}
+
+.inputbox{
+  width:250px;
+}
+
+#how{
+
+  position: relative;
+  top: 5px;
+  /*visibility: hidden;*/
+  display: none;
+}
+
+
+
+#toggleField{
+  margin: 2px 20px 2px 20px;
+  border: 2px dashed #000000;
+  padding: 10px;
+  font-size: 12px;
+
+}
+
+.switch {
+
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 23px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  display:none;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #737373;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(15px);
+  -ms-transform: translateX(15px);
+  transform: translateX(15px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+#infobtn {
+  height: 15px;
+  width: 15px;
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  font-family: Georgia;
+  color: #1a0f00;
+  font-size: 15px;
+  text-decoration: none;
+  float: right;
+  text-align: center;
+  padding: 0 auto;
+  margin: 4px;
+
+
+
+}
+
+#infobtn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #1aff8c, #00cc66);
+  background-image: -moz-linear-gradient(top, #1aff8c, #00cc66);
+  background-image: -ms-linear-gradient(top, #1aff8c, #00cc66);
+  background-image: -o-linear-gradient(top, #1aff8c, #00cc66);
+  background-image: linear-gradient(to bottom, #1aff8c, #00cc66);
+  /*
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  */
+  text-decoration: none;
+}
+
+#settingsbtn {
+  margin: 10px 10px 10px 10px;
+  height: 26px;
+  background: #00cc66;
+  color: #1a0f00;
+  background-image: -webkit-linear-gradient(top, #ff9900, #b36b00);
+  background-image: -moz-linear-gradient(top, #ff9900, #b36b00);
+  background-image: -ms-linear-gradient(top, #ff9900, #b36b00);
+  background-image: -o-linear-gradient(top, #ff9900, #b36b00);
+  background-image: linear-gradient(to bottom, #ff9900, #b36b00);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  font-family: Georgia;
+  /*color: #ffffff; white*/
+  font-size: 16px;
+  text-decoration: none;
+  float: right;
+  width: 15%;
+  text-align: center;
+  vertical-align: center;
+  padding: 5px 0px; /* height 26 text size 16 padding 5 on each side */
+
+}
+
+#settingsbtn:hover {
+  background: #3cb0fd;
+  /*different colors for the top and bottom half*/
+  color: #404040;
+  background-image: -webkit-linear-gradient(top, #1aff8c, #00cc66);
+  background-image: -moz-linear-gradient(top, #1aff8c, #00cc66);
+  background-image: -ms-linear-gradient(top, #1aff8c, #00cc66);
+  background-image: -o-linear-gradient(top, #1aff8c, #00cc66);
+  background-image: linear-gradient(to bottom, #1aff8c, #00cc66);
+  text-decoration: none;
+}
+
+.larger{
+  font-size: 16px;
+}
+
+#credit{
+  text-align: center;
+  padding: 0 auto;
+}
+
+.centerOptions{
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 auto;
+}

@@ -1,0 +1,195 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{pgfgantt}
+\usepackage{array}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+
+\title{3XA3 Module Guide}
+\author{Group 20 (2020Vision)\\
+Mullen, Thomas - mullentc - 001406837\\
+Pavlich, Phillip - pavlicpm - 001414960\\
+Bauer, Ivan - bauerim - 001418765\\
+L02}
+\date{}
+
+\begin{document}
+\begin{table}[hp]
+\caption{Revision History} \label{TblRevisionHistory}
+\begin{tabularx}{\textwidth}{XXl}
+\toprule
+\textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
+\midrule
+November 10, 2017 & Thomas Mullen & Rev.0 of Document\\
+... & ... & ...\\
+\bottomrule
+\end{tabularx}
+\end{table}
+\newpage
+
+\maketitle
+\newpage
+
+\tableofcontents
+
+\section{Introduction and Overview}
+\subsection{Summary of Project}
+Password security is a persistent issue that affects all users who need to protect sensitive data and systems with passwords. Users often struggle to remember secure passwords due to their length and end up choosing short passwords that offer reduced security. \\
+
+A common solution to this problem is to use a "password manager", a piece of software that securely stores passwords. The most common implementation of a password manager is an encrypted database of passwords stored locally on the user's system. These stores are vulnerable to decryption by brute force, or through flaws in the encryption algorithm. \\
+
+This document describes the design of a program (referred to as PretzelPass) that uses an alternative method. This method uses a hashing algorithm to generate passwords when they are needed, as well as a securely stored salt, to make brute-force attacks computationally infeasible.
+
+\subsection{Design Principles}
+The development team have followed a structural design pattern called the bridge pattern. The bridge design pattern consists of separating an object's interface from its implementation. We did this by splitting the code into three different modules called browseraction, hasher and options. The user interface is in the browser\_action directory. The algorithmic operations to obtain and modify the password are separated into a module called hasher. Options holds all of the user's password generation preferences and display preferences. To reduce coupling among the modules, inter-module communication is managed through event subscriptions. \\
+
+The behavioral design pattern that we have used is called a state design. We have used a series of event listeners to recalculate every time that a state on the front end has been modified. This allows the system to automatically update itself without prompting the user. This increases the speed and efficiency of the program.
+
+\subsection{Document Context}
+This document should be examined in context with the Module Interface Specification (MIS) and the Software Requirements Specification (SRS).
+
+\subsection{Document Structure}
+The structure of this document is detailed in the table of contents.
+
+\section{Anticipated and Unlikely Changes}
+\subsection{Anticipated Changes}
+The software may encounter future issues that cannot be dealt with until they occur.  The designers acknowledge several potential issues could arise and have modified the design to compensate for these possible changes.  Anticipated changes shall only affect a single module in order to minimize future maintenance costs. This will also prevent the integrity of the product from being compromised as a whole. Anticipated changes for PretzelPass are as follows:
+\begin{itemize}
+\item AC1) The hashing algorithm used to secure passwords may need to be updated to a newer, more secure version.
+\item AC2) Increase in computing power may require multiple rounds of hashing to be used.
+\item AC3) Code that interacts with the Chrome Extension APIs may need to be updated as these APIs are removed or updated.
+\end{itemize}
+
+\subsection{Unlikely Changes}
+While there are many aspects that are likely be required to be changed in the future, there are also several aspects of PretzelPass that are unlikely to need any changes.  Unlikely changes for PretzelPass are as follows:
+\begin{itemize}
+\item UC1) Password-based services are phased out and the software needs to be deprecated.
+\item UC2) Generating passwords through hashing algorithms is shown to be insecure and the generation method must change.
+\item UC3) The medium that the extension is provided through (Chrome) becomes deprecated and a new browser must be adopted. 
+\end{itemize}
+
+\newpage
+\section{Module Hierarchy}
+The modules will be split into three main modules, each containing their own sub-modules.  This design supports information hiding.
+
+\begin{itemize}
+\item M1) Browseraction Module
+\begin{itemize}
+\item M1A) UserInterface
+\item M1B) Customization
+\item M1C) EventListeners
+\end{itemize}
+\item M2) Hasher Module
+\begin{itemize}
+\item M2A) index
+\item M2B) hash
+\item M2C) unicode
+\item M2D) constraints
+\item M2E) salt
+\end{itemize}
+\item M3) Options Module
+\begin{itemize}
+\item M3A) constraints
+\item M3B) display
+\end{itemize}
+\end{itemize}
+
+\newpage
+\begin{table}
+\caption{Module Hierarchy}
+\begin{tabular}{|p{0.5\linewidth} || p{0.5\linewidth}|}
+\hline
+Level 1 & Level 2 \\
+\hline
+browseraction & UserInterface\\
+& Customization \\
+& EventListeners \\
+\hline
+hasher & index\\
+& hash \\
+& unicode \\
+& constraints \\
+& salt \\
+\hline
+options & constraints \\
+& display\\
+\hline
+\end{tabular}
+\end{table}
+\newpage
+
+\section{Connections Between Requirements and Design}
+The design of the project implements the requirements detailed in the Software Requirements Specification.  The following Traceability Matrix details this relationship.
+\section{Traceability Matrix}
+\newpage
+\begin{table}[!htbp]
+\centering
+\caption{Trace Between Requirements and Modules}
+\begin{tabular}{|C{5cm}||C{5cm}|}
+\hline
+\textbf{Requirement} & \textbf{Module} \\
+\hline
+R1 & M2B  \\
+\hline
+R2 & M1C, M2A, M2B,M2C, M2D, M2E \\
+\hline
+R3 & M1A, M1B \\
+\hline
+R4 & M1A, M1B, M1C, M3A, M3B \\
+\hline
+R5 & M1C \\
+\hline
+R6 & M1A, M3A \\
+\hline
+R7 & M2A, M2B,M2C, M2D, M2E, M3A,M3B \\
+\hline
+R8 & M2E \\
+\hline
+R9 & M2A, M2B, M2C, M2D, M2E \\
+\hline
+R10 & M2E \\
+\hline
+R11 & M1A, M1B \\
+\hline
+R12 & M2E \\
+\hline
+R13 & M1A, M1B, M2A, M2B, M2C, M2D, M2E, M3A, M3B \\
+\hline
+R14 & M2A, M2B, M2C, M2D, M2E \\
+\hline
+R15 & M2A, M2B, M2C, M2D, M2E  \\
+\hline
+R16 & M2A, M2B, M2D, M2E  \\
+\hline
+R17 & M1A, M2A, M2B, M2C, M2D, M2E, M3A, M3B \\
+\hline
+R18 & M1A, M2A, M2B, M2C, M2D, M2E \\
+\hline
+R19 & M2A, M2B, M2D \\
+\hline
+\end{tabular}
+\end{table} 
+\newpage
+The table above shows what modules would be affected by the anticipated changes outlined in Section 2.
+\begin{table}
+\centering
+\caption{Trace Between Anticipated Changes and Modules}
+\begin{tabular}{|C{5cm}||C{5cm}|}
+\hline
+\textbf{Anticipated Change} & \textbf{Module} \\
+\hline
+AC1 & M2B \\
+\hline
+AC2 & M2B \\
+\hline
+AC3 & M1A, M1B, M1C, M2A, M2B, M2C, M2D, M2E \\
+\hline
+\end{tabular}
+\end{table} 
+
+\end{document}
